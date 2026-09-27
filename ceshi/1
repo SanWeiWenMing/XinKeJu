@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>跳转百度</title>
+</head>
+<body>
+<p>正在跳转，请稍候……</p>
+<script>
+// 等统计脚本有机会上报后，再跳转
+setTimeout(() => {
+  location.href = "https://www.baidu.com";
+}, 300);
+</script>
+</body>
+</html>
