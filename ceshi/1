@@ -9,7 +9,7 @@
 <script>
 // 等统计脚本有机会上报后，再跳转
 setTimeout(() => {
-  location.href = "https://www.baidu.com";
+  location.href = "https://www.bing.com";
 }, 300);
 </script>
 </body>
