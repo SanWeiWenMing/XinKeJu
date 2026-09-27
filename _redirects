@@ -1,0 +1,8 @@
+# SPA路由，防止页面刷新404
+/*    /index.html   200
+
+# 访问 /baidu 跳转到百度官网
+/baidu    https://www.baidu.com    301
+
+# 访问 /bing 跳转到必应国际版
+/bing    https://www.bing.com    301
