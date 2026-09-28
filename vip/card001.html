@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP会员卡</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:system-ui, sans-serif;
+        }
+        body{
+            background:#165DFF;
+            padding:30px 20px;
+        }
+        .vip-card{
+            background:#fff;
+            border-radius:20px;
+            padding:28px;
+            max-width:420px;
+            margin:0 auto;
+            box-shadow:0 8px 24px rgba(0,0,0,0.15);
+        }
+        .title{
+            font-size:24px;
+            font-weight:bold;
+            color:#165DFF;
+            margin-bottom:20px;
+        }
+        .item{
+            margin:14px 0;
+            font-size:16px;
+            color:#333;
+        }
+        .label{
+            color:#666;
+            display:inline-block;
+            width:90px;
+        }
+        .valid{
+            margin-top:24px;
+            padding:14px;
+            background:#eef5ff;
+            border-radius:12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="vip-card">
+        <div class="title">✨ 新科举 VIP 会员</div>
+        <div class="item">
+            <span class="label">会员姓名：</span>张三
+        </div>
+        <div class="item">
+            <span class="label">会员编号：</span>VIP001
+        </div>
+        <div class="valid">
+            <div class="item">生效时间：2026-09-01</div>
+            <div class="item">截止时间：2027-09-01</div>
+        </div>
+    </div>
+</body>
+</html>
