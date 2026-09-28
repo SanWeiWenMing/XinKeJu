@@ -5,12 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>会员信息</title>
 <style>
-.card{max-width:400px;margin:20px auto;border:1px solid #ccc;border-radius:16px;padding:24px}
-.avatar{width:120px;height:120px;object-fit:cover;border-radius:8px;margin:0 auto;display:block}
-.item{margin:12px 0;font-size:16px}
-.label{color:#666}
-.valid{color:green;font-weight:bold}
-.expired{color:red;font-weight:bold}
+*{box-sizing:border-box;margin:0;padding:0;font-family:system-ui}
+body{background:#f7f8fa;padding:20px}
+.card{max-width:420px;margin:0 auto;background:#fff;border-radius:18px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.08)}
+.avatar{width:130px;height:130px;object-fit:cover;border-radius:12px;margin:0 auto 20px;display:block;border:1px solid #eee}
+.item{margin:14px 0;font-size:16px}
+.label{color:#666;display:inline-block;width:80px}
+.status-green{color:#28a745;font-weight:bold;font-size:18px}
+.status-red{color:#dc3545;font-weight:bold;font-size:18px}
 </style>
 </head>
 <body>
@@ -21,8 +23,30 @@
   <div class="item"><span class="label">年龄：</span>13岁</div>
   <div class="item"><span class="label">学校：</span>XX中学</div>
   <div class="item"><span class="label">生效日期：</span>2026-01-01</div>
-  <div class="item"><span class="label">截止日期：</span>2026-02-01</div>
-  <div class="item valid">会员状态：正常有效</div>
+  <div class="item"><span class="label">截止日期：</span>2027-01-01</div>
+  <div class="item" id="statusLine"></div>
 </div>
+
+<script>
+// =========【这里每个会员单独修改】=========
+const startTimeStr = "2026-01-01";
+const endTimeStr = "2027-01-01";
+// ========================================
+const startDate = new Date(startTimeStr);
+const endDate = new Date(endTimeStr);
+const now = new Date();
+
+const statusDom = document.getElementById("statusLine");
+if(now < startDate){
+    statusDom.className = "item status-green";
+    statusDom.innerText = "⏳会员尚未生效";
+}else if(now > endDate){
+    statusDom.className = "item status-red";
+    statusDom.innerText = "❌会员已过期";
+}else{
+    statusDom.className = "item status-green";
+    statusDom.innerText = "✅会员正常有效";
+}
+</script>
 </body>
 </html>
