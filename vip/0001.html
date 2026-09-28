@@ -22,21 +22,27 @@ body{background:#f7f8fa;padding:20px}
   <div class="item"><span class="label">性别：</span>男</div>
   <div class="item"><span class="label">年龄：</span>13岁</div>
   <div class="item"><span class="label">学校：</span>XX中学</div>
-  <div class="item"><span class="label">生效日期：</span>2026-01-01</div>
-  <div class="item"><span class="label">截止日期：</span>2028-02-02</div>
+  <!-- 👉【只需要修改这里的日期！】下面data-start和data-end和页面文字保持一致 -->
+  <div class="item">
+    <span class="label">生效日期：</span>
+    <span id="startDateTxt" data-start="2026-01-01">2026-01-01</span>
+  </div>
+  <div class="item">
+    <span class="label">截止日期：</span>
+    <span id="endDateTxt" data-end="2028-02-02">2028-02-02</span>
+  </div>
   <div class="item" id="statusLine"></div>
 </div>
-
 <script>
-// =========【这里每个会员单独修改】=========
-const startTimeStr = "2026-01-01";
-const endTimeStr = "2028-02-02";
-// ========================================
-const startDate = new Date(startTimeStr);
-const endDate = new Date(endTimeStr);
-const now = new Date();
+// JS自动读取上面data属性的日期，不用手动修改JS代码
+const startRaw = document.getElementById("startDateTxt").dataset.start;
+const endRaw = document.getElementById("endDateTxt").dataset.end;
 
+const startDate = new Date(startRaw + "T00:00:00");
+const endDate = new Date(endRaw + "T00:00:00");
+const now = new Date();
 const statusDom = document.getElementById("statusLine");
+
 if(now < startDate){
     statusDom.className = "item status-green";
     statusDom.innerText = "⏳会员尚未生效";
